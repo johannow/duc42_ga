@@ -47,3 +47,9 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+#Don't include big results files
+03_results/01_models/
+03_results/02_predictions/
+#Don't include big data files, only once we manually put in repo
+01_data/processed_data/
