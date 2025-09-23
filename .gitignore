@@ -51,5 +51,5 @@ rsconnect/
 #Don't include big results files
 03_results/01_models/
 03_results/02_predictions/
-#Don't include big data files, only once we manually put in repo
-01_data/processed_data/
+#Don't include big data files, only ones we manually put in repo
+01_data/02_processed_data/
