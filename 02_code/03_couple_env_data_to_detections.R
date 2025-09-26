@@ -177,25 +177,7 @@ rm(bathy_vals)
 # Extract habitat raster values
 habitats_vals <- 
     terra::extract(habitats_rast, terra::vect(chunk01)) |>
-     rename(row_id = ID)
-
-habitats_vals <- #habitats_vals |>
-    terra::extract(habitats_rast, terra::vect(chunk01)) |>
-        dplyr::rename(row_id = ID) |>
-        dplyr::group_by(row_id) |>
-        dplyr::summarise(
-            habitat = {
-            vals <- na.omit(c_across(where(is.numeric)))
-            if (length(vals) == 0) {
-                NA_integer_  # fallback for all-NA cases
-            } else {
-                freq_table <- table(as.character(vals))
-                modes <- names(freq_table)[freq_table == max(freq_table)]
-                as.integer(sample(modes, 1))  # return as integer
-            }
-            },
-            .groups = "drop"
-        )
+     rename(row_id = ID)%>%distinct(row_id, .keep_all = TRUE)
 
 # Join bathy values back in
 chunk01_habitats <- 
