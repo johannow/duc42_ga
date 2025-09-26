@@ -1,17 +1,20 @@
+##################################################################################
+##################################################################################
 
-# author: Lotte Pohl, lotte.pohl@vliz.be
-# purpose: couple environmental data to processed acoustic detections
+# Author: Lotte Pohl
+# Email: lotte.pohl@vliz.be
+# Date: 2025-09-26
+# Script Name: ~/duc42_ga/02_code/03_couple_env_data_to_detections.R
+# Script Description: couple environmental data to processed acoustic detections
+# SETUP ------------------------------------
+cat("\014")                          # Clears the console
+rm(list = ls())                      # Remove all variables of the work space
+source("02_code/folder_structure.R") # Create relative paths
 
-rm(list = ls()) # clear environment
-
-## ----folder-structure---------------------------------------------------------
-# Source preparation script to create relative paths
-## for now only folders right?
-
-source("02_code/folder_structure.R")
+##################################################################################
+##################################################################################
 
 ## ----R-packages---------------------------------------------------------------
-
 
 ## other
 library(dplyr)

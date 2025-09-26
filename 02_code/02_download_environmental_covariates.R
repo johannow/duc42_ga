@@ -1,14 +1,18 @@
+##################################################################################
+##################################################################################
 
-# author: Lotte Pohl, lotte.pohl@vliz.be
-# purpose: download environmental data
+# Author: Lotte Pohl
+# Email: lotte.pohl@vliz.be
+# Date: 2025-09-26
+# Script Name: ~/duc42_ga/02_code/02_download_environmental_covariates.R
+# Script Description: download environmental data
+# SETUP ------------------------------------
+cat("\014")                          # Clears the console
+rm(list = ls())                      # Remove all variables of the work space
+source("02_code/folder_structure.R") # Create relative paths
 
-rm(list = ls()) # clear environment
-
-## ----folder-structure---------------------------------------------------------
-# Source preparation script to create relative paths
-## for now only folders right?
-
-source("02_code/folder_structure.R")
+##################################################################################
+##################################################################################
 
 ## ----R-packages---------------------------------------------------------------
 
@@ -277,7 +281,7 @@ terra::writeRaster(habitats_rast, file.path(processed_dir,"habitats_rast.tif"), 
 terra::writeCDF(bathy_rast, file.path(processed_dir,"bathy_rast.nc"), varname = "elevation", overwrite = TRUE)
 
 # sst
-terra::writeCDF(sst_rast_BPNS, file.path(processed_dir,"sst_rast.nc"), varname = variable_name, overwrite = TRUE, metags = list()) #throws error because it cannot write the link 'http://copernicus.marine.eu/''
+terra::writeCDF(sst_rast_BPNS, file.path(processed_dir,"sst_rast.nc"), varname = variable_name, overwrite = TRUE) #throws error because it cannot write the link 'http://copernicus.marine.eu/''
 
 ## tiff
 # terra::writeRaster(sst_rast_BPNS, file.path(processed_dir,"sst_rast.tiff"), overwrite = TRUE)

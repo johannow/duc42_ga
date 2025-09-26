@@ -1,4 +1,4 @@
-# This scrupt sources all code chunks in '02_code'in the correct order
+# This script sources all code chunks in '02_code'in the correct order
 
 rm(list=ls())
 # Chunk 01

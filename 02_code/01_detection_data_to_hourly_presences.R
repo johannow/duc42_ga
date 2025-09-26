@@ -1,13 +1,19 @@
+##################################################################################
+##################################################################################
 
-# author: Lotte Pohl, lotte.pohl@vliz.be
-# purpose: process raw acoustic detections and deployments data to a monthly aggregation of presences per station.
-# Note: JHN, your header looks way nicer so I will upgrade :)
+# Author: Lotte Pohl
+# Email: lotte.pohl@vliz.be
+# Date: 2025-09-26
+# Script Name: ~/duc42_ga/02_code/01_detection_data_to_hourly_presences.R
+# Script Description: process raw acoustic detections and deployments data to a 
+#                     monthly aggregation of presences per station
+# SETUP ------------------------------------
+ cat("\014")                          # Clears the console
+ rm(list = ls())                      # Remove all variables of the work space
+ source("02_code/folder_structure.R") # Create relative paths
 
-
-rm(list = ls()) # clear environment
-## ----setup-folders------------------------------------------------------------
-# Source preparation script to create relative paths
-source("02_code/folder_structure.R")
+##################################################################################
+##################################################################################
 
 ## ----load-packages------------------------------------------------------------
 # unsure still how .renv works with loading packages - 
