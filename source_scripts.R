@@ -1,5 +1,5 @@
 # This script sources all code chunks in '02_code'in the correct order
-
+source("02_code/folder_structure.R")
 rm(list=ls())
 # Chunk 01
 source("02_code/01_detection_data_to_hourly_presences.R")
