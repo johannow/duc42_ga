@@ -53,3 +53,6 @@ rsconnect/
 03_results/02_predictions/
 #Don't include big data files, only ones we manually put in repo
 01_data/02_processed_data/
+
+#renv
+renv/library/
